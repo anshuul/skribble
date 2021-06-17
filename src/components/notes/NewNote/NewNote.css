@@ -1,0 +1,34 @@
+.new-note-card {
+  margin-top: 30px;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.new-note-card-title {
+  font-family: "Abril Fatface", sans-serif;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px;
+}
+.new-note-card-content {
+  padding-left: 0px !important;
+}
+.new-note-description {
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.new-note-description-bold {
+  font-weight: 600;
+}
+.errorText {
+  color: red !important;
+}
+label {
+  color: black !important;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+}

@@ -1,13 +1,62 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-color: #3948aa;
+  box-shadow: none;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
+  color: #3948aa !important;
+}
+
+@font-face {
+  font-family: "SpeedWritten";
+  src: url(./fonts/SpeedWritten.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "LazySunday";
+  src: url(./fonts/LazySunday-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "BetterTogether";
+  src: url(./fonts/Better\ Together\ Demo.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PetterSecret";
+  src: url(./fonts/Petter\ Secret\ Demo\ Version.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "WinterFun";
+  src: url(./fonts/Winterfun.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "WhiteAngelica";
+  src: url(./fonts/WhiteAngelica.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Photoshoot";
+  src: url(./fonts/Photoshoot.ttf) format("truetype");
 }

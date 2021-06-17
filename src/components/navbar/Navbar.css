@@ -1,0 +1,17 @@
+.navbar-title {
+  font-weight: 700;
+}
+/*  .navbar-notes-logo {
+    height: 63px;
+    width: auto;
+  }
+  .navbar-notes-logo-small {
+    height: 56px;
+  }*/
+
+.custom-title {
+  font-family: "Photoshoot";
+  /*  font-weight: 500 !important; */
+  /*  letter-spacing: 2px; */
+  margin-top: 5.9px;
+}
