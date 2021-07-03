@@ -10,6 +10,7 @@ import {
 } from "../..//store/actions/userNotesActions";
 import { Redirect } from "react-router-dom";
 import nothingFound from "../../nothing-found.png";
+import "./Notes.css"
 
 class Notes extends Component {
   componentDidMount() {
@@ -29,19 +30,19 @@ class Notes extends Component {
             deleteNote={this.props.deleteNote}
           />
         ) : (
-          <div className="row center-align">
-            <img
-              src={nothingFound}
-              alt="No Notes Found"
-              className="nothing-found-image"
-            />
-            <h4 className="nothing-found-title">Your Notes List is Empty</h4>
-            <p className="nothing-found-description">
-              Looks like you don't have any notes. Fill the form above to add
-              new notes.
+            <div className="row center-align">
+              <img
+                src={nothingFound}
+                alt="No Notes Found"
+                className="nothing-found-image"
+              />
+              <h4 className="nothing-found-title">Your Notes List is Empty</h4>
+              <p className="nothing-found-description">
+                Looks like you don't have any notes. Fill the form above to add
+                new notes.
             </p>
-          </div>
-        )}
+            </div>
+          )}
       </div>
     );
   }

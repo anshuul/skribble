@@ -1,0 +1,13 @@
+.nothing-found-title {
+    font-weight: 800;
+    padding: 0px 20px;
+    font-family: "Roboto", sans-serif;
+  }
+  .nothing-found-description {
+    font-size: 16px;
+    padding: 0px 20px;
+    font-weight: 500;
+  }
+  .nothing-found-image {
+    max-width: 80%;
+  }

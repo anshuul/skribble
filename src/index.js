@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const store = createStore(
   rootReducer,
@@ -34,7 +35,7 @@ store.firebaseAuthIsReady.then(() => {
     document.getElementById("root")
   );
 });
-
+serviceWorkerRegistration.register();
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
