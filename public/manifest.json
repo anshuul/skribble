@@ -1,6 +1,6 @@
 {
   "short_name": "Skribble",
-  "name": "A simple notes app created using ReactJS, Redux and Firebase",
+  "name": "Skribble-A Notes App",
   "icons": [
     {
       "src": "icons/icon-36x36.png",
