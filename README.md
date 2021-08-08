@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+![Skribble](docs/banner.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Skribble
 
-## Available Scripts
+[![Website](https://img.shields.io/badge/website-up-green?style=for-the-badge&logo=react&url)](https://notes.theoctagon.in/) 
 
-In the project directory, you can run:
+## Technologies Used <a name="technologies-used"></a>
 
-### `npm start`
+| Name        | Description |
+| ----------- | ---------------- |
+| ReactJS | React is an open-source, front end, JavaScript library for building user interfaces or UI components.|
+| MaterializeCSS | A modern responsive front-end framework based on Google's Material Design.|
+| Redux | Redux is an open-source JavaScript library for managing application state.|
+| Cloud Firestore | Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud.|
+| Firebase Auth | Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.|
+| Formik | Formik is an open source form library for React.|
+| React Router | React Router is a collection of navigational components that compose declaratively with your application.|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The website follows a simple structure where any user can view a demo page where they can add new notes which get stored temporarily in the local app state. These notes get deleted when the user reloads the page. Alternatively, a user can sign up using email and password authentication or login using their Google account and can add notes which get saved in the cloud firestore database. A user can only view their own notes and no other user can view the notes created by other users.
 
-### `npm test`
+The pages visible to unauthenticated and authenticated users are as follows.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Unauthenticated User](#unauthenticated-user)
+  - [Demo Page](#demo-page)
+    - [Add Note](#demo-page-add-note)
+  - [Sign In Page](#sign-in-page)
+    - [Email and Password Sign In](#email-and-password-sign-in)
+    - [Google Sign In](#google-sign-in)
+  - [Sign Up Page](#sign-up-page)
+    - [Email and Password Sign Up](#email-and-password-signup)
+- [Authenticated User](#authenticated-user)
+  - [User Notes Page](#user-notes-page)
+    - [Add Note](#user-notes-page-add-note)
 
-### `npm run build`
+## Unauthenticated User <a name="unauthenticated-user"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Demo Page <a name="demo-page"></a>
+![Demo Page](docs/demo-page.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This page is displayed when an unauthenticated user opens the application. Here, the user can access the notes system but the notes that are added will not be stored anywhere. An initial note is also displayed to the user as an example. If the user refreshes the page, the notes will be deleted and only the initial note will remain.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Add Note <a name="demo-page-add-note"></a>
+The first card on the Demo Page is the 'Add New Note' Card. This allows the user to add new notes to the list of notes. This note is stored in the state of the application which is handled using Redux. Because of this, the data is lost if the user leaves the page or refreshes it.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Sign In  Page <a name="sign-in-page"></a>
+![Sign In Page](docs/sign-in-page.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This page allows the user to sign in to the application. The user can either decide to sign in using their email and password or choose to sign in with Google.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Email and Password Sign In <a name="email-and-password-sign-in"></a>
+If the user chooses to sign in with their email and password, their `email` and `password` inputs are validated using Firebase Authentication. If the email and password are correct, the user is redirected to the user Notes page and their existing notes are fetched from the Cloud Firestore Database.
 
-## Learn More
+If the user does not have an account or enters the wrong email or password, an error message is displayed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Google Sign In <a name="google-sign-in"></a>
+If the user chooses to sign in with their Google ID, a pop-up is shown where the user can choose the ID with which they want to continue to the rest of the application.
 
-### Code Splitting
+Note: Even if a user does not have an existing ID, a new entry is created in the database and their account is automatically registered when using the Google Sign In.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Sign Up  Page <a name="sign-up-page"></a>
+![Sign Up Page](docs/sign-up-page.png)
+This page allows the user to sign up for the application. The user can use the Email and Password to sign up or they can directly log in using the Google Sign In option.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Email and Password Sign Up <a name="email-and-password-signup"></a>
+If the user chooses to sign up using their email and password, they will be asked to enter their `full-name`, `email` and `password`. This information will be used to create an account and to obtain other details like initials.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Authenticated User <a name="authenticated-user"></a>
 
-### Advanced Configuration
+### User Notes Page <a name="user-notes-page"></a>
+![User Notes Page](docs/notes-page.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The notes page will allow an authenticated user to view their saved notes and add new ones. This page fetches the notes from Cloud Firestore and displays it to the user in a neat list of cards. If the user hasn't added any notes, a 'Your Notes List is Empty' message to the user. Additionally, the user can delete a note and it will be deleted from the database as well.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Add Note <a name="user-notes-page-add-note"></a>
+The first card on the User notes Page is the 'Add New Note' Card. This allows the user to add new notes to their existing list of notes. The data entered in the title and content fields is stored as a new entry in the Cloud Firestore database.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
